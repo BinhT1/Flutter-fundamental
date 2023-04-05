@@ -20,8 +20,9 @@ class Home extends StatelessWidget {
         margin: const EdgeInsets.all(20),
         child: Column(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
+          crossAxisAlignment: CrossAxisAlignment.center, // same align-items
+          mainAxisAlignment: MainAxisAlignment.start, // same justify-content
+          children: <Widget>[
             const Icon(Icons.airport_shuttle,
                 color: Colors.lightBlue, size: 50.0),
             TextButton(
