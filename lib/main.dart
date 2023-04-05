@@ -68,6 +68,35 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
+            Row(
+              children: [
+                Expanded(
+                  flex: 5,
+                  child: Image.asset('assets/img1.jpg'),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    color: Colors.cyan,
+                    child: const Text("one"),
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    padding: const EdgeInsets.all(10.0),
+                    color: Colors.pinkAccent,
+                    child: const Text("two"),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(10.0),
+                  color: Colors.amber,
+                  child: const Text("three"),
+                ),
+              ],
+            )
           ],
         ),
       ),
