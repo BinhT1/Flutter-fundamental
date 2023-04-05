@@ -23,6 +23,14 @@ class Home extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center, // same align-items
           mainAxisAlignment: MainAxisAlignment.start, // same justify-content
           children: <Widget>[
+            const CircleAvatar(
+              backgroundImage: AssetImage('assets/img2.jpg'),
+              radius: 50,
+            ),
+            const Divider(
+              height: 30,
+              color: Colors.amber,
+            ),
             const Icon(Icons.airport_shuttle,
                 color: Colors.lightBlue, size: 50.0),
             TextButton(
