@@ -1,117 +1,108 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(home: Home()));
-}
+void main() => runApp(MaterialApp(
+      home: NinjaCard(),
+    ));
 
-class Home extends StatelessWidget {
+class NinjaCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: const Text('my first app'),
+        title: Text('Ninja ID Card'),
         centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
       ),
-      body: Container(
-        // can set padding and margin
-        color: Colors.grey,
-        padding: const EdgeInsets.fromLTRB(10, 20, 30, 40),
-        margin: const EdgeInsets.all(20),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0),
         child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center, // same align-items
-          mainAxisAlignment: MainAxisAlignment.start, // same justify-content
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const CircleAvatar(
-              backgroundImage: AssetImage('assets/img2.jpg'),
-              radius: 50,
-            ),
-            const Divider(
-              height: 30,
-              color: Colors.amber,
-            ),
-            const Icon(Icons.airport_shuttle,
-                color: Colors.lightBlue, size: 50.0),
-            TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.lightBlue),
-                onPressed: () {
-                  print("hahahaha");
-                },
-                child: const Padding(
-                  // only paddding, don't have margin
-                  padding: EdgeInsets.all(20),
-                  child: Text('Enabled',
-                      style: TextStyle(fontSize: 20, color: Colors.white)),
-                )),
-            IconButton(
-              iconSize: 50,
-              icon: const Icon(Icons.airport_shuttle),
-              onPressed: () {},
-              tooltip: "click button",
-            ),
-            ElevatedButton.icon(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.download,
-                  size: 24,
-                ),
-                label: const Text("download")),
-            const SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Text('Download'),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Icon(
-                    Icons.download,
-                    size: 24.0,
-                  ),
-                ],
+            Center(
+              child: CircleAvatar(
+                radius: 40.0,
+                backgroundImage: AssetImage('assets/img1.jpg'),
               ),
             ),
+            Divider(
+              color: Colors.grey[800],
+              height: 60.0,
+            ),
+            Text(
+              'NAME',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              'Nguyễn Bá Bình',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                fontWeight: FontWeight.bold,
+                fontSize: 28.0,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Text(
+              'HOMETOWN',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              'Ha Noi, Viet Nam',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                fontWeight: FontWeight.bold,
+                fontSize: 28.0,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Text(
+              'CURRENT CODE LEVEL',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              '8',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                fontWeight: FontWeight.bold,
+                fontSize: 28.0,
+                letterSpacing: 2.0,
+              ),
+            ),
+            SizedBox(height: 30.0),
             Row(
-              children: [
-                Expanded(
-                  flex: 5,
-                  child: Image.asset('assets/img1.jpg'),
+              children: <Widget>[
+                Icon(
+                  Icons.email,
+                  color: Colors.grey[400],
                 ),
-                Expanded(
-                  flex: 3,
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    color: Colors.cyan,
-                    child: const Text("one"),
+                SizedBox(width: 10.0),
+                Text(
+                  "nguyenbasbinh@gmail.com",
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 18.0,
+                    letterSpacing: 1.0,
                   ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    padding: const EdgeInsets.all(10.0),
-                    color: Colors.pinkAccent,
-                    child: const Text("two"),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(10.0),
-                  color: Colors.amber,
-                  child: const Text("three"),
-                ),
+                )
               ],
-            )
+            ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.red[600],
-        child: const Text("click"),
       ),
     );
   }
