@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'quote_card.dart';
 
 void main() => runApp(MaterialApp(
       home: QuoteList(),
@@ -21,29 +22,6 @@ class _QuoteListState extends State<QuoteList> {
     Quote(text: "Quote 3", author: "Binh 3")
   ];
 
-  Widget quoteTemplate(quote) {
-    return Card(
-      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            quote.text,
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 18, color: Colors.grey[600]),
-          ),
-          SizedBox(
-            height: 6,
-          ),
-          Text(
-            quote.author,
-            style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-          )
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +35,7 @@ class _QuoteListState extends State<QuoteList> {
             padding: const EdgeInsets.all(0),
             itemCount: quotes.length,
             itemBuilder: (context, index) {
-              return quoteTemplate(quotes[index]);
+              return QuoteCard(quote: quotes[index]);
             }));
   }
 }
