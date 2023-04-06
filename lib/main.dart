@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      home: NinjaCard(),
+      home: NewCard(),
     ));
 
-class NinjaCard extends StatelessWidget {
+class NewCard extends StatefulWidget {
+  @override
+  State<NewCard> createState() => _NewCardState();
+}
+
+class _NewCardState extends State<NewCard> {
+  int codeLevel = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,6 +19,16 @@ class NinjaCard extends StatelessWidget {
       appBar: AppBar(
         title: Text('Ninja ID Card'),
         centerTitle: true,
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            codeLevel += 1;
+          });
+        },
+        child: Icon(Icons.add),
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
       ),
@@ -75,7 +92,7 @@ class NinjaCard extends StatelessWidget {
             ),
             SizedBox(height: 10.0),
             Text(
-              '8',
+              '$codeLevel',
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 fontWeight: FontWeight.bold,
