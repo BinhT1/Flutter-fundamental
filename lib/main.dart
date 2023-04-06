@@ -35,7 +35,14 @@ class _QuoteListState extends State<QuoteList> {
             padding: const EdgeInsets.all(0),
             itemCount: quotes.length,
             itemBuilder: (context, index) {
-              return QuoteCard(quote: quotes[index]);
+              return QuoteCard(
+                quote: quotes[index],
+                delete: () {
+                  setState(() {
+                    quotes.remove(quotes[index]);
+                  });
+                },
+              );
             }));
   }
 }
