@@ -38,9 +38,8 @@ class _ChooseLocationState extends State<ChooseLocation> {
       ),
       body: ElevatedButton(
         onPressed: (){
-
         },
-        child: Text('counter is ')
+        child: Text('')
         ),
     );
   }
