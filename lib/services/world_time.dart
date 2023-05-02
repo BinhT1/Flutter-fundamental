@@ -8,8 +8,13 @@ class WorldTime {
   late String time;
   String flag;
   String url;
+  bool? isDaytime;
 
-  WorldTime({this.location = "", this.flag = "", this.url = ""});
+  WorldTime(
+      {this.location = "",
+      this.flag = "",
+      this.url = "",
+      this.isDaytime = false});
 
   Future<void> getData() async {
     try {
@@ -23,6 +28,8 @@ class WorldTime {
 
       DateTime now = DateTime.parse(dateTime);
       now = now.add(Duration(hours: int.parse(offset)));
+
+      isDaytime = now.hour > 6 && now.hour < 18 ? true : false;
 
       time = DateFormat.jm().format(now);
     } catch (e) {
