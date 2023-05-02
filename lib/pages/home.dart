@@ -17,8 +17,8 @@ class _HomeState extends State<Home> {
 
     print(data);
 
-    String bgImage = data?['isDaytime'] ? 'day.png' : 'night.png';
-    Color bgColor = data?['isDaytime'] ? Colors.blue : Colors.indigo;
+    String bgImage = data['isDaytime'] ? 'day.png' : 'night.png';
+    Color bgColor = data['isDaytime'] ? Colors.blue : Colors.indigo;
     return Scaffold(
         backgroundColor: bgColor,
         body: SafeArea(
@@ -60,7 +60,7 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      data?['location'],
+                      data['location'],
                       style: const TextStyle(
                           fontSize: 28,
                           letterSpacing: 2.0,
@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
                   height: 20,
                 ),
                 Text(
-                  data?['time'],
+                  data['time'],
                   style: TextStyle(fontSize: 66, color: Colors.white),
                 )
               ],
